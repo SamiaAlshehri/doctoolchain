@@ -55,7 +55,7 @@ jobs:
           ./dtcw generatesite
 
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GH_PAGES_TOKEN }}
