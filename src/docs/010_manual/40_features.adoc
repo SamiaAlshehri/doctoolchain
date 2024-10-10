@@ -1,0 +1,12 @@
+:jbake-rightColumnHtml: <a href="single-page.html"><i class="fa fa-file fa-fw"></i> View single page</a>
+//tag::install[]
+
+:filename: 010_manual/40_features.adoc
+
+== Using docToolchain to Build Docs
+
+include::../_feedback.adoc[]
+
+docToolchain implements many features via scripts, which you call through the command line. These scripts are called `tasks` in this documentation.
+
+Learn more about these scripts in the xref:../015_tasks/03_tasks.adoc[Tasks] menu.

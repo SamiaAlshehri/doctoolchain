@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        maven {
+            credentials {
+                username mavenUsername
+                password mavenPassword
+            }
+            url mavenRepository
+        }
+    }
+    dependencies {
+        if (file("libs/org/docToolchain/core-${project.properties.dtc_version}.jar").exists()) {
+            classpath files("libs/org/docToolchain/core-${project.properties.dtc_version}.jar")
+        } else {
+            classpath("org.docToolchain:core")
+        }
+    }
+}
+
+import org.docToolchain.tasks.ExportJiraIssuesTask
+
+//tag::exportJiraIssues[]
+task exportJiraIssues(
+        description: 'exports all jira issues from a given search',
+        group: 'docToolchain'
+) {
+    doLast {
+        config.targetDir = targetDir
+        new ExportJiraIssuesTask(config).execute()
+    }
+}
+//end::exportJiraIssues[]

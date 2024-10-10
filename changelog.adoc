@@ -1,0 +1,838 @@
+== Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on https://keepachangelog.com/en/1.0.0/[Keep a Changelog],
+and this project tries to adhere to https://semver.org/spec/v2.0.0.html[Semantic Versioning].
+
+== Unreleased
+
+=== fixed
+
+=== added
+
+=== changed
+
+== 3.4.0 - 2024-07-18
+
+=== fixed
+
+* https://github.com/docToolchain/docToolchain/issues/1414[Build suddenly fails (since changes to Gradle plugin portal)]
+
+=== added
+* Collapsible left menu (see https://doctoolchain.org/docToolchain/v2.0.x/030_news/index.html for an example)
+* https://github.com/docToolchain/docToolchain/pull/1389[exportEA: Add additional option to set the image format]
+* https://github.com/docToolchain/docToolchain/pull/1391[#1391: Update collectIncludes.gradle]
+* 
+
+=== changed
+
+* removed link to plausible.io on docs site
+
+== 3.3.1 - 2024-03-01
+
+=== fixed
+
+* https://github.com/docToolchain/docToolchain/issues/1369[#1359: publishToConfluence - Something went wrong]
+* https://github.com/docToolchain/docToolchain/issues/1372[#1372: publishToConfluence: java.io.FileNotFoundException]
+* https://github.com/docToolchain/docToolchain/pull/1379[publishToConfluence: Fix Confluence APIv2 Cursor Logic]
+
+=== added
+
+=== changed
+
+== 3.3 - 2024-02-17
+
+=== fixes
+
+* [Noticket] Enforce x86 Java on macOS as long as jbake does not support arm64 processors
+* [Noticket] Avoid usage of an arbitrary `arch` binary/script on `+${PATH}+` instead of the desired `/usr/bin/arch` on macOS.
+* https://github.com/docToolchain/docToolchain/issues/1353[#1353: docker: Problem with 3.x images and dependencies?]
+* https://github.com/docToolchain/docToolchain/issues/1239[#1239: Execute a custom asciidoctor converter for generateHTML]
+* https://github.com/docToolchain/docToolchain/issues/1290[#1290: Custom ruby extension for PDF generation]
+* https://github.com/docToolchain/docToolchain/issues/1355[#1355: publishToConfluence - some code blocks are generated as txt instead of requested language and loose linebreaks]
+* https://github.com/docToolchain/docToolchain/issues/1349[#1349: publishToConfluence - a source code block containing template parameters has formatting problems]
+
+=== added
+
+=== changed
+
+* you can now specify another dockerhub via DTC_DOCKER_PREFIX
+
+== 3.2.2 - 2024-01-18
+
+=== fixes
+
+* https://github.com/docToolchain/docToolchain/issues/1335[#1335 publishToConfluence throws exception when uploading attachments in v3.2.0]
+* https://github.com/docToolchain/docToolchain/issues/1343[#1343: Build and publish docs after PR get into ng]
+
+=== added
+* https://github.com/docToolchain/docToolchain/issues/1338[#1338: extend the options for the docker environment by additional environment variables and additional parameter sets.]
+
+=== changed
+
+* [Core] Http calls from docToolchain are now identified by a user agent string of format `docToolchain_v<DTCW_VERSION>`.
+
+== 3.2.1 - 2024-01-10
+
+=== fixes
+
+* https://github.com/docToolchain/docToolchain/issues/1330[#1330: Publish to confluence gives response 400 on version 3.2.0]
+
+=== added
+* https://github.com/docToolchain/docToolchain/issues/1327[#1327: Allow use of enhanced docker image]
+* new task `wipeConfluenceSpace` to delete all pages of a space
+
+=== changed
+
+== 3.2.0 - 2023-12-20
+
+=== fixes
+
+* https://github.com/docToolchain/docToolchain/issues/1307[#1307: powershell: problem to find local installed jdk]
+* https://github.com/docToolchain/docToolchain/issues/1300[#1300: publishToConfluence:Cannot handle embedded SVG images]
+* https://github.com/docToolchain/docToolchain/issues/1253[#1253: publishToConfluence removes all linebreaks from code]
+
+=== added
+
+=== changed
+
+* https://github.com/docToolchain/docToolchain/issues/1231[#1231: docker: port mapping only needed for previewSite]
+* https://github.com/docToolchain/docToolchain/issues/1309[#1309: deprecate previewSite task]
+* https://github.com/docToolchain/docToolchain/issues/1292[#1292: remove http builder and httpmime]
+
+== 3.1.2 - 2023-11-16
+
+=== fixes
+
+* https://github.com/docToolchain/docToolchain/issues/1291[#1291: publishToConfluence - Images not found]
+* https://github.com/docToolchain/docToolchain/issues/1293[#1293: Explicit dependency required between generateHTML and htmlSanityCheck]
+
+=== added
+
+=== changed
+
+* The Confluence API configuration is now aware of contexts and hides the API version specific settings.
+
+== 3.1.1 - 2023-11-07
+
+=== fixes
+
+* https://github.com/docToolchain/docToolchain/issues/1281[#1281: publishToConfluence throws exception when uploading attachments in v3.1.0]
+* https://github.com/docToolchain/docToolchain/issues/1283[#1283: "tasks" target causes Exception]
+
+=== added
+
+=== changed
+
+== 3.1.0 - 2023-11-03
+
+=== fixes
+
+* https://github.com/docToolchain/docToolchain/pull/1262[#1262: downloadTemplate skips creating a folder, causes generateSite to fail]
+* https://github.com/docToolchain/docToolchain/issues/1269[#1269 Fix wrong bash usage on Darwin with Homebrew]
+* https://github.com/docToolchain/docToolchain/issues/1270[#1269 Ensure DTC_JAVA_HOME is preferred over JAVA_HOME]
+* https://github.com/docToolchain/docToolchain/issues/1069[#1069 publishToConfluence 'ancestorName' query does not support proxy]
+* https://github.com/docToolchain/docToolchain/issues/1272[#1272: publishToConfluence broken when document contains internal links]
+
+=== added
+
+* https://github.com/docToolchain/docToolchain/issues/1254[configure Confluence API parameters via Gradle parameters]
+* introduce `verifyConfluenceApiAccess` task - check if your API settings are correct
+
+=== changed
+
+* introduce docToolchain core component to modularize the project
+* implement Confluence API v2 support
+
+== 3.0.2 - 2023-09-12
+
+=== fixes
+
+* https://github.com/docToolchain/docToolchain/pull/1246[#1246: publishToConfluence: Fix comparision error for titles with leading/trailing white spaces]
+* https://github.com/docToolchain/docToolchain/issues/1248[#1248: broken default config]
+
+== 3.0.1 - 2023-09-11
+
+=== fixes
+
+* https://github.com/docToolchain/docToolchain/issues/1209[#1209: generateSite: Problem with meta data parsing]
+* https://github.com/docToolchain/docToolchain/pull/1217[#1217, #1214, #1216: dtcw.ps1 fix handling of java version]
+* https://github.com/docToolchain/docToolchain/issues/1215[#1215: dtcw.ps1 says dtc not installed after exceuting an install]
+* https://github.com/docToolchain/docToolchain/issues/1192[#1192: exportExcel: unnecessary Rowspans break rendering of table]
+* https://github.com/docToolchain/docToolchain/issues/1221[#1221: generateSite: beforeToc functionality broken]
+* https://github.com/docToolchain/docToolchain/issues/1218[#1218: plantuml encoding issues]
+* fixed curl command in manual
+* https://github.com/docToolchain/docToolchain/issues/402[#402: publishToConfluence: Error rendering macro 'code']
+* https://github.com/docToolchain/docToolchain/issues/1200[#1200: JCenter kills doctoolchain, as Grolifant is not available on Maven Central]
+* https://github.com/docToolchain/docToolchain/issues/1198[#1198: gravatar eleminates leading 0 from md5 hash]
+* https://github.com/docToolchain/docToolchain/issues/1193[#1193: exportEA fails since v2.0.5 with an exception]
+* https://github.com/docToolchain/docToolchain/issues/395[#395 asciidoctor-diagram: ERROR: Failed to generate image: PlantUML image generation failed]
+* https://github.com/docToolchain/docToolchain/issues/455[#455 Force execution to stop with failure on missing image reference]
+* https://github.com/docToolchain/docToolchain/issues/621[#621: dtcw - sdkman installation check returns wrong result]
+* https://github.com/docToolchain/docToolchain/issues/829[#829: Multiple run of dtcw with docker is failing because of a container name conflict]
+* https://github.com/docToolchain/docToolchain/issues/831[#831: fix for generateSite: images-hrefs not correct]
+* https://github.com/docToolchain/docToolchain/issues/973[#973: `dtcw getJava` doesn't work without `local`]
+* https://github.com/docToolchain/docToolchain/issues/1109[#1109: docToolchain release notes contain releases twice]
+* https://github.com/docToolchain/docToolchain/issues/1031[#1031: dtcw ignores installed Java RE when docker is installed - your java version 17 is too new]
+* https://github.com/docToolchain/docToolchain/issues/1163[#1163: upload to confluence breaks with embedded images]
+* https://github.com/docToolchain/docToolchain/issues/1161[#1161: publishToConfluence looses the id when generating level 2 page anchors]
+
+* various fixes in `dtcw`, `dtcw.ps1`:
+** pick the right environment if none provided by the user
+** support of JAVA_HOME which was silently ignored.
+* https://github.com/docToolchain/docToolchain/issues/220[#220 convertToDocx and convertToEpub not working]
+* Workaround for Confluence new Editor rollout
+** https://github.com/docToolchain/docToolchain/issues/1184[#1184: PublishToConfluence new editor issues and page size]
+** https://github.com/docToolchain/docToolchain/issues/880[#880: publishToConfluence FAILED: Content body cannot be converted to new editor format]
+* https://github.com/docToolchain/docToolchain/issues/1053[#1053: publishToConfluence: hash is displayed at end of some pages]
+
+* configure if build should fail on missing images
+** introduces configuration property `failOnMissingImages`
+
+* introduce `generateContent` task - AI for docToolchain
+* added req42 framework to downloadTemplate task
+* added 'FR' as language for arc42
+* https://antora.org[Antora] support (beta), setup a docToolchain project and integrate it as module seamlessly into your existing Antora playbook. See `downloadTemplate` task for more details.
+
+* added short tutorial about changing the theme of a microsite
+
+=== changed
+
+* add support for Java 17, drop support for Java 8
+* upgrade Gradle to 8.1.1
+* upgrade dependencies
+** 'com.athaydes:spock-reports:2.3.2-groovy-3.0'
+** 'com.github.ben-manes.versions:0.46.0'
+** 'com.structurizr:structurizr-dsl:1.30.1'
+** 'com.structurizr:structurizr-export:1.14.0'
+** 'com.structurizr:structurizr-graphviz:2.0.0'
+** 'de.undercouch.download:5.4.0'
+** 'io.pebbletemplates:pebble:3.2.0'
+** 'net.bytebuddy:byte-buddy:1.14.4'
+** 'org.asciidoctor:asciidoctor-gradle-jvm:4.0.0-alpha.1' (remove obsolete cloning of `reveal.js`)
+** 'org.asciidoctor:asciidoctorj-diagram:2.2.7'
+** 'org.apache.httpcomponents:httpmime:4.5.14'
+** 'org.apache.poi:poi-ooxml:5.2.3'
+** 'org.codehaus.groovy:groovy-xml:3.0.13'
+** 'org.jsoup:jsoup:1.16.1'
+** 'org.junit.jupiter:junit-jupiter-api:5.9.3'
+** 'org.openapitools:openapi-generator-gradle-plugin:6.6.0'
+** 'org.openapi.generator:6.6.0'
+** 'org.spockframework:spock-core:2.3-groovy-3.0'
+* `dtcw` and `dtcw.ps1`:
+** improve output with hints to guide the user
+** add `--version` option
+** deprecate `getJava` with `install java`
+** add environment variable `DTC_CONFIG_FILE` to specify a configuration file other than than `docToolchainConfig.groovy` in the project root folder
+* `collectIncludes`
+** changed regexp to start with `^[A-Za-z]` as file name to allow lowercase filenames as well.
+** certain directories are excluded from traversal. Define `excludeDirectories` in order to skip additional directories.
+* doc: replace old URL `doctoolchain.github.io` occurrences with the new `doctoolchain.org`
+* `publishToConfluence`
+** support embedded images
+
+== 3.0.0-rc1 - 2023-07-13
+
+=== fixes
+
+* https://github.com/docToolchain/docToolchain/issues/1200[#1200: JCenter kills doctoolchain, as Grolifant is not available on Maven Central]
+* https://github.com/docToolchain/docToolchain/issues/1198[#1198: gravatar eleminates leading 0 from md5 hash]
+* https://github.com/docToolchain/docToolchain/issues/1193[#1193: exportEA fails since v2.0.5 with an exception]
+* https://github.com/docToolchain/docToolchain/issues/395[#395 asciidoctor-diagram: ERROR: Failed to generate image: PlantUML image generation failed]
+* https://github.com/docToolchain/docToolchain/issues/455[#455 Force execution to stop with failure on missing image reference]
+* https://github.com/docToolchain/docToolchain/issues/621[#621: dtcw - sdkman installation check returns wrong result]
+* https://github.com/docToolchain/docToolchain/issues/829[#829: Multiple run of dtcw with docker is failing because of a container name conflict]
+* https://github.com/docToolchain/docToolchain/issues/831[#831: fix for generateSite: images-hrefs not correct]
+* https://github.com/docToolchain/docToolchain/issues/973[#973: `dtcw getJava` doesn't work without `local`]
+* https://github.com/docToolchain/docToolchain/issues/1109[#1109: docToolchain release notes contain releases twice]
+* https://github.com/docToolchain/docToolchain/issues/1031[#1031: dtcw ignores installed Java RE when docker is installed - your java version 17 is too new]
+* https://github.com/docToolchain/docToolchain/issues/1163[#1163: upload to confluence breaks with embedded images]
+* https://github.com/docToolchain/docToolchain/issues/1161[#1161: publishToConfluence looses the id when generating level 2 page anchors]
+
+* various fixes in `dtcw`, `dtcw.ps1`:
+** pick the right environment if none provided by the user
+** support of JAVA_HOME which was silently ignored.
+* https://github.com/docToolchain/docToolchain/issues/220[#220 convertToDocx and convertToEpub not working]
+* Workaround for Confluence new Editor rollout
+** https://github.com/docToolchain/docToolchain/issues/1184[#1184: PublishToConfluence new editor issues and page size]
+** https://github.com/docToolchain/docToolchain/issues/880[#880: publishToConfluence FAILED: Content body cannot be converted to new editor format]
+* https://github.com/docToolchain/docToolchain/issues/1053[#1053: publishToConfluence: hash is displayed at end of some pages]
+
+=== added
+* configure if build should fail on missing images
+** introduces configuration property `failOnMissingImages`
+
+* introduce `generateContent` task - AI for docToolchain
+* added req42 framework to downloadTemplate task
+* added 'FR' as language for arc42
+* https://antora.org[Antora] support (beta), setup a docToolchain project and integrate it as module seamlessly into your existing Antora playbook. See `downloadTemplate` task for more details.
+
+* added short tutorial about changing the theme of a microsite
+
+=== changed
+
+* add support for Java 17, drop support for Java 8
+* upgrade Gradle to 8.1.1
+* upgrade dependencies
+** 'com.athaydes:spock-reports:2.3.2-groovy-3.0'
+** 'com.github.ben-manes.versions:0.46.0'
+** 'com.structurizr:structurizr-dsl:1.30.1'
+** 'com.structurizr:structurizr-export:1.14.0'
+** 'com.structurizr:structurizr-graphviz:2.0.0'
+** 'de.undercouch.download:5.4.0'
+** 'io.pebbletemplates:pebble:3.2.0'
+** 'net.bytebuddy:byte-buddy:1.14.4'
+** 'org.asciidoctor:asciidoctor-gradle-jvm:4.0.0-alpha.1' (remove obsolete cloning of `reveal.js`)
+** 'org.asciidoctor:asciidoctorj-diagram:2.2.7'
+** 'org.apache.httpcomponents:httpmime:4.5.14'
+** 'org.apache.poi:poi-ooxml:5.2.3'
+** 'org.codehaus.groovy:groovy-xml:3.0.13'
+** 'org.jsoup:jsoup:1.16.1'
+** 'org.junit.jupiter:junit-jupiter-api:5.9.3'
+** 'org.openapitools:openapi-generator-gradle-plugin:6.6.0'
+** 'org.openapi.generator:6.6.0'
+** 'org.spockframework:spock-core:2.3-groovy-3.0'
+* `dtcw` and `dtcw.ps1`:
+** improve output with hints to guide the user
+** add `--version` option
+** deprecate `getJava` with `install java`
+** add environment variable `DTC_CONFIG_FILE` to specify a configuration file other than than `docToolchainConfig.groovy` in the project root folder
+* `collectIncludes`
+** changed regexp to start with `^[A-Za-z]` as file name to allow lowercase filenames as well.
+** certain directories are excluded from traversal. Define `excludeDirectories` in order to skip additional directories.
+* doc: replace old URL `doctoolchain.github.io` occurrences with the new `doctoolchain.org`
+* `publishToConfluence`
+** support embedded images
+
+== 2.2.1 - 2023-03-05
+
+=== fixes
+
+* use the configured proxy when publishing labels to confluence pages
+* #1054 : fix for `publishToConfluence` was broken in v2.2.0
+* #1063 : fix for `exportConfluence` broken path for partial exports
+
+=== added
+
+* exportStructurizr Task
+* automated tests for dtcw
+
+=== changed
+
+* automate the use of x86 emulator on apple silicon in dtcw
+* updated jBake Markdown extensions and added FENCED_CODE_BLOCKS
+
+== 2.2.0 - 2023-02-16
+
+=== fixes
+
+* fixed whitespace in GH issue template (which leads to errors in `htmlSanityCheck`)
+* fixed ExportMarkdownSpec
+* fixed GenerateDeckSpec
+* fixed GenerateDeck / Reveal.js
+* fixed exportEA hangs by EA v16.1
+* fixed exportEA write model notes into models subfolder
+* allow numeric ancestorIds for confluence export
+* https://github.com/docToolchain/docToolchain/pull/951[#951 Improve DTC_PROJECT_BRANCH management]
+* https://github.com/docToolchain/docToolchain/issues/976[#976 dtcw shows a fatal error when not in git repository]
+* https://github.com/docToolchain/docToolchain/issues/978[#978 dtcw.ps1 does not correctly check for java version]
+* https://github.com/docToolchain/docToolchain/issues/890[#890 updated documentation on "Self-Contained docToolchain"]
+* Remove never used analytics.js file from docsy theme
+
+=== added
+
+* new Task exportConfluence
+* Add `confluenceBearerToken` property
+* rubyExtensions configuration
+* CZ as language for downloadTemplate
+* Enable to use a particular version of DTC from the wrapper by setting the environment variable 'DTC_VERSION' accordingly.
+* https://github.com/docToolchain/docToolchain/issues/1002[publishToConfluence: Add possibility to set the page version comment]
+* exportEAP.vbs: trim notes filename
+* exportEAP.vbs: creates for each model a combined notes
+* exportEAP.vbs: msg "looking for..." extended for EA 16.1
+
+=== changed
+
+* switch docker base image from deprecated openJDK 14 to temurin 11
+* The `publishToConfluence` guide now contains 3 modes for authentication (username & password, username & API key, personal access token)
+* Improve confluence export performance when only ancestorIds are given
+* https://github.com/docToolchain/docToolchain/issues/937[#937 Confluence publish nested pages by heading]
++
+This replaces the settings `allInOnePage` and `createSubPages`.
+Migrate as follows:
++
+** `allInOnePage = true` is the same as `subpagesForSections = 0`
+** `allInOnePage = false && createSubpages = false` is the same as `subpagesForSections = 1`
+** `allInOnePage = false && createSubpages = true` is the same as `subpagesForSections = 2`
+
+* https://github.com/docToolchain/docToolchain/issues/683[#683 publishToConfluence with unknown source language]
+* https://github.com/docToolchain/docToolchain/issues/940[#940 simplify configuration to use preamble heading from h1 instead of configuration]
++
+Migrate by removing the setting `preambleTitle` and set the correct first level heading in the document.
+* Make `dtcw` (and some other shell executables) https://www.shellcheck.net/[shellcheck] proof
+
+== 2.1.0 - 2022-08-15
+
+=== fixes
+
+2022-09-30::
+* https://github.com/docToolchain/docToolchain/issues/938
+
+* https://github.com/docToolchain/docToolchain/issues/720[#720 Fix gradlew.bat]
+* Fixes typo in dtcw.bat for finding the correct local cli command.
+* https://github.com/docToolchain/docToolchain/pull/847[#847 generateHTML & generatePDF documentation improvements]
+* https://github.com/docToolchain/docToolchain/issues/851[#851 fix duplicate TOC marker]
+* https://github.com/docToolchain/docToolchain/issues/853[#853 Hide site links when not configured]
+* https://github.com/docToolchain/docToolchain/issues/873[#873 generateSite: Fix index page location]
+* https://github.com/docToolchain/docToolchain/issues/899[#899 dtcw local <any-task> (bash) executes :help instead of <any-task>]
+
+=== added
+* https://github.com/docToolchain/docToolchain/issue/692[#692 generateSite: navigation tree instead of a list on the left]
+* https://github.com/docToolchain/docToolchain/pull/886[#886 Add the possibility to set maven credentials]
+* https://github.com/docToolchain/docToolchain/issue/848[#848 generateSite: add customisation possibilities for the jbake gradle plugin]
+* http://doctoolchain.org/docToolchain/v2.0.x/015_tasks/150_task_createTask.html[#894 custom, project specific Tasks]
+* https://github.com/docToolchain/docToolchain/pull/897[#897 collectIncludes: Add options to configure search]
+* https://github.com/docToolchain/docToolchain/pull/911[#911 Add confluence page limit]
+
+=== changed
+2022-05-08::
+* updated available languages for arc42 template
+2022-08-07::
+* updated asciidoctorj-diagram to 2.2.3
+2022-08-09::
+* added `latest` version to dtcw
+
+== 2.0.5 - 2022-03-10
+
+=== fixes
+
+2022-03-08::
+* downloadTemplate: fix encoding for working with powershell
+* https://github.com/docToolchain/docToolchain/pull/821[#821 exportPPT is broken since 2.x]
+2022-02-25::
+* https://github.com/docToolchain/docToolchain/pull/803[#764 order :jbake-order: numerical]
+2021-12-20::
+* brushed up docs
+2021-12-06::
+* https://github.com/docToolchain/docToolchain/pull/711[#712 - publishToConfluence fails when no hash is available for an uploaded image]
+2022-01-23::
+* https://github.com/docToolchain/docToolchain/pull/757[#757 - CI: Fix problem in ci-scrip]
+2021-12-06::
+* https://github.com/docToolchain/doctoolchain.github.io/issues/20[#20 some wget versions throw errors]
+* https://github.com/docToolchain/doctoolchain.github.io/issues/19[#19 the wrapper stops if no java installed but you want to use docker]
+2021-11-26::
+* https://github.com/docToolchain/doctoolchain.github.io/issues/18[#18 gradle daemon has memory problems]
+2021-11-15::
+* https://github.com/docToolchain/docToolchain/pull/696[#696 - exportContributors - not everybody is rendered]
+* https://github.com/docToolchain/docToolchain/pull/697[#697 - exportToMarkdown docs are not referenced correctly]
+
+=== added
+
+2022-03-16::
+* https://github.com/docToolchain/docToolchain/pull/825[#825 - publishToConfluence: support swagger-open-api]
+
+2021-12-09::
+* https://github.com/docToolchain/docToolchain/pull/714[#714 - Update exportExcel.gradle]
+
+2021-11-30::
+* https://github.com/docToolchain/docToolchain/pull/706[#706 - exportEA: Add check if diagrams shall be overwritten]
+
+2021-11-13::
+* https://github.com/docToolchain/docToolchain/pull/686[#686 - Add resourceDirs option]
+
+=== changed
+
+2022-03-09::
+* upgraded underlying gradle from 6.7.1 to 6.9.2
+
+2022-03-08::
+* downloadTemplate: upgraded download plugin
+* https://github.com/docToolchain/docToolchain/issue/817[#817 htmlSanityCheck remove dependency to generateHTML]
+2022-02-09::
+* https://github.com/docToolchain/docToolchain/issue/795[#795 publishToConfluence: added hint for wrong configuration]
+2022-01-23::
+* https://github.com/docToolchain/docToolchain/pull/756[#756  exportEA: Add two more items for export]
+2021-12-23::
+* https://github.com/docToolchain/docToolchain/issues/730[#730 "improve this doc" and "create and issue" links]
+2021-12-09::
+* make build output less noisy - use logger instead of println
+2021-12-08::
+* changed wording of landing page (thanx to Jody Winter)
+2021-12-04::
+* changed java download hint from oracle to https://adoptium.net/
+2021-11-30::
+* refactored config file
+2021-11-14::
+* refactored jbake template "menu.gsp"
+
+== 2.0.4 - 2022-03-09
+
+there was a major bug in this release, please ignore
+
+== 2.0.3 - 2021-11-11
+
+=== added
+
+* https://github.com/docToolchain/docToolchain/issues/681[#681 - Please reactivate single page manual on v2.0.x site]
+
+=== fixed
+
+2021-11-10::
+* fix https://github.com/docToolchain/docToolchain/issues/693[#693 - on windows powershell, targetDir is set wrong]
+* fix https://github.com/docToolchain/docToolchain/issues/695[#695 - generateSite: toc attributes]
+2021-11-09::
+* fix https://github.com/docToolchain/docToolchain/issues/690[#690 - previewSite: exception if folder does not exist]
+2021-11-08::
+* fix https://github.com/docToolchain/docToolchain/issues/687[#687 - wrong encoding of emojis]
+* fix https://github.com/docToolchain/docToolchain/issues/688[#688 - htmlSanityCheck: config of sourceDir is wrong]
+* fix https://github.com/docToolchain/docToolchain/issues/689[#689 - code highlight: css clash with blog post tags]
+* fix https://github.com/docToolchain/docToolchain/issues/682[#682 - generateSite: copyImages uses the wrong target]
+
+
+== 2.0.2 - 2021-10-19
+
+=== added
+
+2021-10-19::
+* use :jbake-rightcolumnhtml: to add some html to the right column
+
+=== changed
+
+2021-10-19::
+* Add https://github.com/docToolchain/docToolchain/issues/667[#667 - GH Actions Default Build]
+
+2021-10-18::
+* Fix https://github.com/docToolchain/docToolchain/issues/664[#664 - doctoolchain.org link and typos]
+
+=== fixed
+
+2021-10-19::
+* fix example for gitRepoUrl in config
+* fix projectRootDir
+* fix status.png and siteTitle
+
+2021-10-17::
+* fix https://github.com/docToolchain/docToolchain/issues/660[#660 - generateSite: projectRootDir wrong]
+
+2021-10-11::
+* fix https://github.com/docToolchain/docToolchain/issues/651[#651 - powershell: broken install when space in user path]
+
+2021-10-15::
+* fix https://github.com/docToolchain/docToolchain/issues/658[#658 - generateSite - subsequent runs won't fail with an invalid or missing site theme]
+
+== 2.0.1 - 2021-10-06
+
+=== added
+
+2021-10-06::
+* experimental: globalReferences
+
+=== changed
+
+2021-10-04::
+* fix https://github.com/docToolchain/docToolchain/issues/616[#616 - exportOpenAPI: Enhance the Confluence Open-API Documentation API to refer to URLs]
+
+=== fixed
+
+2021-10-06::
+* fix https://github.com/docToolchain/docToolchain/issues/636[#636 - theme: larger admonition icons]
+* fix https://github.com/docToolchain/docToolchain/issues/649[#649 - generateSite on powershell wrong file-separator]
+2021-10-04::
+* fix https://github.com/docToolchain/docToolchain/issues/645[#645 - exportJiraIssues: Could not get unknown property 'configFile' for task ':exportJiraIssues' of type org.gradle.api.DefaultTask]
+
+2021-09-30::
+* fix https://github.com/docToolgchain/docToolchain/issues/632[#632 - generateHTML: broken images with generateHTML]
+
+== 2.0.0 - 2021-09-23
+
+The 2.0.0 relase contains all changes of the release candidates.
+See "https://doctoolchain.github.io/docToolchain/v2.0.x/030_news/2021/2.0.0-release.html[v2.0.0 of docToolchain has been released!]" for more details.
+
+== 2.0.0-rc17 - 2021-09-22
+
+=== changed
+
+2021-09-22::
+* streamingExecute (exportPPT, exportEA) now emits a note instead ot an error when running on linux
+* brushed up powershell wrapper
+
+== 2.0.0-rc16 - 2021-09-21
+
+=== added
+
+2021-09-21::
+* added lunrjs as local search engine
+
+=== fixed
+
+2021-09-21::
+* updated exportContributors to follow moved files
+* fixed downloadTemplate
+
+== 2.0.0-rc15 - 2021-09-18
+
+=== added
+
+2021-09-06::
+* added warning when running on WSL
+* added dtcw.bat to avoid execution restrictions
+* updated developer docs
+* added docsy as theme
+
+=== fixed
+
+2021-09-18::
+* fixed favicons
+* fixed blog
+
+== 2.0.0-rc14 - 2021-05-22
+
+=== added
+2021-05-21::
+* if the outputPath from the config starts with a '/', it will be considered as absolute path. +
+This way, you can move the build fodler outside of your repository. +
+`outputPath = System.getenv('HOME')+'/.doctoolchain/build/'+(new File('.')).canonicalPath.md5()`
+* repository theme gets only copied to build if it is defined in `siteFolder`
+* generateSite will now add meta-data to all asciidoc files which have no meta-data defined. The menu name and order will be created corresponding to the folder and file name. The title will be extracted as first headline from the file itself.
+2021-05-18::
+* Headless mode for themes
+* fix landing page (only gets copied once when microsite config isn't set yet.)
+
+=== changed
+
+=== fixed
+
+2021-05-22::
+* fix copyThemes to also copy the external theme
+2021-05-06::
+* fix #574: publishToConfluence: Problem with wrong ancestorId
+2021-04-28::
+* fix copyImages for generateSite
+
+== 1.4.0 - 2021-05-21
+
+=== Added
+
+2021-05-21::
+* removed jCenter references
+
+2021-03-21::
+
+* https://github.com/docToolchain/docToolchain/pull/560[Add support for another OpenAPI Confluence macro] by https://github.com/silverdonkey[Nikolay Orozov]
+
+=== Changed
+
+2021-04-07::
+
+* https://github.com/docToolchain/docToolchain/pull/564[set plantUMLDir for all generate-Tasks]
+
+=== Fixed
+
+2021-05-06::
+* fix #574: publishToConfluence: Problem with wrong ancestorId
+
+2021-04-29::
+* exportEA hang after all exports are done since EA v15.2 #570 (PeterStange)
+
+== Version: 2.0.0-rc13
+
+=== added
+
+2021-04-07::
+* generateSite can now handle themes
+2021-04-09::
+* downloadTemplate can now handle further templates
+
+== Version: 2.0.0-rc4
+
+=== fixed
+
+2012-03-02::
+* removed default imagesdir for generateSite
+
+== Version: 2.0.0-rc3
+
+=== fixed
+
+2012-03-01::
+* fixed imagesdir typo
+
+== Version: 2.0.0-rc2
+
+=== fixed
+
+2012-03-01::
+* updated docs for generateSite
+* fixed menu for generateSite
+
+2012-02-27::
+* fixed createDist task
+* fixed plantUML for generatePDF
+* fixed plantUML for generateSite
+
+== Version: 2.0.0-rc1
+
+=== added
+
+2012-02-26::
+* copyThemes task
+* generateSite task
+2021-02-23::
+* first version of powershell wrapper
+2021-02-22::
+* manual test script
+2021-01-05::
+* dtc wrapper
+2021-01-08::
+* first definition of a static site taken from arc42-template-project
+* updated gradle wrapper (6.6.1)
+* added downloadTemplates task
+* added feature to automatically create a Config file if it doesn't exist
+* configured gradle to run without daemon
+
+=== fixed
+2021-02-24::
+* [543] dtcw: added pre-requisites check and alternative curl instead of wget
+2021-02-22::
+* handling of images for generateHTML
+
+== Version 1.3.1
+=== Added
+
+=== Changed
+
+=== Fixed
+
+2021-02-28::
+* doctoolchain.bat can now handle java properties
+
+== 1.3.1 - 2021-02-27
+
+=== Added
+
+2021-01-29::
+* [519] - Describe release process, update changelog
+* smaller distribution file through createDist task
+
+2021-01-26::
+* [522] - Added sdkman file
+
+2021-01-25::
+* [522] - Support for JDK 14
+* [514] - Add support of multiple EA project locations in parallel
+
+=== Changed
+
+2021-01-25::
+* Add support of multiple EA project locations in parallel #514
+* updated Gradle to 6.7.1
+* added JDK14 for travis-ci testing
+* [517] - update revealJs to 3.9.1 and asciidoctor-revealjs to 2.0.1
+
+=== Fixed
+
+2021-02-22:
+- [535] - add initArc42RU task
+2021-02-10:
+- [530] - fix writing of diagram attributes using exportEA
+
+2021-01-25::
+* [523] - fix for generateDeck
+
+2021-01-25::
+* fixed docs: ConfluenceConfig.groovy missing #492
+
+== 1.3.0 - 2021-01-20
+
+=== Added
+
+2021-01-05::
+* Add properties for htmlSanityCheck #507
+
+2020-09-07::
+* Ability to export Jira Sprint(s) data changelog (key, summary) (https://github.com/docToolchain/docToolchain/pull/473[#473])
+
+
+== 1.2.0 - 2020-02-09
+
+=== Added
+
+2020-08-24::
+* Ability to export OpenAPI specification to asciidoc (https://github.com/docToolchain/docToolchain/issues/464[#464])
+
+2020-08-20::
+* New attribute 'ancestorName' for easier nesting in Confluence (https://github.com/docToolchain/docToolchain/issues/460[#460])
+
+2020-07-08::
+* Jira configuration for multiple request to Jira API
+* Saving Jira results to Excel files
+* Basic support for custom fields in Jira results
+
+2020-05-08::
+* Jira configuration refactoring to Config.groovy
+
+2019-05-21::
+* first version of EA-PlantUML Exchange scripts
+
+2019-02-26::
+* first version of `exportMetrics` task
+https://github.com/docToolchain/docToolchain/commit/c25ac52e43ccb1d45fa538c06d376258b41e8e32[c25ac52e], https://github.com/docToolchain/docToolchain/commit/a752acfb00206b3ac875b9ab585cd54e9d8fde89[a752acfb]
+
+2019-03-08::
+* Add TomTom logo as company who uses docToolchain https://github.com/docToolchain/docToolchain/pull/284[PR#284]
+
+
+== 1.1.0 - 2020-08-31
+
+=== Added
+
+2020-08-06::
+* publishToConfluence
+** https://github.com/docToolchain/docToolchain/pull/445[#445 Publish to confluence jira macro support]
+
+=== Changed
+
+2019-05-09::
+* upgraded to run with JDK11
+** upgraded Gradle to 5.3.1
+** upgraded Groovy to 2.5.4 (comes with Gradle 5.4.1)
+** upgraded Spock to 1.3
+
+2019-03-13::
+* prependFilename
+** fixed proper handling of file encoding
+** brushed up logging
+** `config.*`, `_config.*`, `feedback.*`, `_feedback.*` are excluded
+
+2019-03-08::
+* asciidoc2confluence
+** added output where docs are published to and added better error message in case of failing authorization https://github.com/docToolchain/docToolchain/commit/1bc146ccc493b4c381cb09742ac71ef44265d990[1bc146c]
+
+2019-03-06::
+* collectIncludes
+** changed regexp to accept ^[A-Z]{3,}-.*$ as file name, eg. all Files which start with an upper case word of at least 3 chars followed by a dash
+** fixed `sourceFolder` to work with docToolchain as submodule
+** added better console output
+** skip `docToolchain`-folder if used as submodule
+
+=== Fixed
+
+2021-25-01::
+* fixed docs: ConfluenceConfig.groovy missing #492
+
+2019-05-30::
+* fix publishToConfluence internal link targets (#223)
+2019-05-09::
+* fixed .bat (#305)
+* fixed tests (#307)
+
+2019-03-08::
+* asciidooc2confluence
+** #227 `spaceKey` was ignored https://github.com/docToolchain/docToolchain/pull/279/[PR#297]
+
+== Released
+
+2020-08-06::
+* publishToConfluence
+** https://github.com/docToolchain/docToolchain/pull/445[#445 Publish to confluence jira macro support]

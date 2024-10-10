@@ -1,0 +1,75 @@
+// header file for req42-framework,
+// including all help texts
+//
+// ====================================
+= req42-framework
+
+image:req42-logo.png[req42] Framework
+// toc-title definition MUST follow document title without blank line!
+:toc-title: Inhaltsverzeichnis
+
+//additional style for req42 help callouts
+ifdef::backend-html5[]
+++++
+<style>
+.req42help {font-size:small; width: 14px; height: 16px; overflow: hidden; position: absolute; right: 0; padding: 2px 0 3px 2px;}
+.req42help::before {content: "?";}
+.req42help:hover {width:auto; height: auto; z-index: 100; padding: 10px;}
+.req42help:hover::before {content: "";}
+@media print {
+	.req42help {display:none;}
+}
+</style>
+++++
+endif::backend-html5[]
+
+// configure DE settings for asciidoc
+include::src/config.adoc[]
+
+
+include::src/about-req42.adoc[]
+
+// horizontal line
+***
+
+[role="req42help"]
+****
+[NOTE]
+====
+This version of the framework contains help texts and explanations. It is meant to familiarize yourself with the framework. 
+For your own documentation better use the _plain_ Version.
+====
+****
+
+
+// numbering from here on
+:numbered:
+
+<<<<
+include::ar/01_business-goals.adoc[]
+<<<<
+include::ar/about-req42.adoc[]
+<<<<
+include::ar/01_business-goals.adoc[]
+<<<<
+include::ar/02_stakeholder.adoc[]
+<<<<
+include::ar/03_scope.adoc[]
+<<<<
+include::ar/04_product-backlog.adoc[]
+<<<<
+include::ar/05_supporting-models.adoc[]
+<<<<
+include::ar/06_quality-requirements.adoc[]
+<<<<
+include::ar/07_constraints.adoc[]
+<<<<
+include::ar/08_domain-terminology.adoc[]
+<<<<
+include::ar/09_assets.adoc[]
+<<<<
+include::ar/10_teams.adoc[]
+<<<<
+include::ar/11_roadmap.adoc[]
+<<<<
+include::ar/12_risks-assumptions.adoc[]

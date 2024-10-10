@@ -1,0 +1,1 @@
+src/docs/10_about/30_community.adoc

@@ -1,0 +1,30 @@
+buildscript {
+    repositories {
+        maven {
+            credentials {
+                username mavenUsername
+                password mavenPassword
+            }
+            url mavenRepository
+        }
+    }
+    dependencies {
+        classpath libs.jsoup
+        classpath libs.groovy.xml
+    }
+}
+
+task exportConfluence (
+        description: 'exports a given confluence space to AsciiDoc',
+        group: 'docToolchain'
+) {
+    doLast {
+        def srcDir  = findProperty("confluence.export.srcDir")?:config.confluence.export.srcDir
+        def destDir = findProperty("confluence.export.destDir")?:config.confluence.export.destDir
+        String[] args = ["srcDir=${docDir}/$srcDir",
+                         "destDir=${docDir}/$destDir"]
+        logger.info ("args: "+args)
+        binding.setProperty('args', args)
+        evaluate(new File(projectDir, 'scripts/confluenceToAsciiDoc.groovy'))
+    }
+}

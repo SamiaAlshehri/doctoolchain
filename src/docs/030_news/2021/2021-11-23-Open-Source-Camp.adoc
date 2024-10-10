@@ -1,0 +1,33 @@
+:filename: 030_news/2021/2021-11-23-Open-Source-Camp.adoc
+== Open Source Camp
+:jbake-title: Open Source Camp
+:jbake-date: 2021-11-23
+:jbake-author: rdmueller
+:jbake-type: post
+:jbake-toc: true
+:jbake-status: published
+:jbake-tags: hackergarten
+:jbake-lang: en
+:doctype: article
+:jbake-menu: news
+
+++++
+<style>
+.center {
+  text-align: center;
+}
+</style>
+++++
+
+[.center]
+image::https://cyberland.ijug.eu/assets/logo/camp-logo.png[]
+
+The next https://cyberland.ijug.eu/2021-12-open-source-camp/[Cyberland Open Source Camp] is just around the corner. This time, https://doctoolchain.org/[docToolchain] will be one of the featured open source projects! Calling all contributors and supporters of the project to think about the tasks we could realistically solve in those few hours. Here are some ideas from our https://github.com/docToolchain/docToolchain/issues[list of open issues] to get your brains into gear:
+
+* https://github.com/docToolchain/docToolchain/issues/578[Autocompletion for the CLI].
+* https://github.com/docToolchain/docToolchain/issues/692[generateSite – additional navigation level on the left].
+* https://github.com/docToolchain/docToolchain/issues/699[Create multi-branch GitHub pages example].
+* https://github.com/docToolchain/docToolchain/issues/679[Investigations with Gitpod].
+* https://github.com/docToolchain/docToolchain/issues/700[A new InitRepo task].
+
+If you have another idea, please mailto:ralf.d.mueller@gmail.com[let me know]. To vote for a task, go to  https://github.com/docToolchain/docToolchain/issues?q=is%3Aopen+label%3AHackergarten+sort%3Areactions-heart-desc[GitHub] and ❤️ the issue.

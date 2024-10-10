@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            credentials {
+                username mavenUsername
+                password mavenPassword
+            }
+            url mavenRepository
+        }
+    }
+    dependencies {
+        //for the markdown conversion
+        classpath libs.markdown.to.asciidoc
+    }
+}
+
+//tag::exportMarkdown[]
+task exportMarkdown(
+        description: 'exports all markdown files to AsciiDoc',
+        group: 'docToolchain',
+        type: Copy
+) {
+    from srcDir
+
+    include("**/*.md") //include only markdown files
+    includeEmptyDirs = false
+    rename(/(.+).md/, '$1.adoc') //rename all files from *.md to *.adoc
+    filter(Markdown2AdocFilter) // convert the content of the files
+
+    into targetDir
+}
+
+class Markdown2AdocFilter extends FilterReader {
+    Markdown2AdocFilter(Reader input) {
+        super(new StringReader(nl.jworks.markdown_to_asciidoc.Converter.convertMarkdownToAsciiDoc(input.text)))
+    }
+}
+//end::exportMarkdown[]

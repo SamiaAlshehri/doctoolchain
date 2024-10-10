@@ -1,0 +1,15 @@
+/* rtl.css */
+body[lang="ar"] {
+    direction: rtl;
+    text-align: right;
+}
+
+body[lang="en"] {
+    direction: ltr;
+    text-align: left;
+}
+
+nav, .menu, .sidebar {
+    direction: inherit;
+    text-align: inherit;
+}

@@ -1,0 +1,51 @@
+:filename: 015_tasks/03_task_exportExcel.adoc
+include::_config.adoc[]
+
+== exportExcel
+
+include::../_feedback.adoc[]
+
+=== About This Task
+
+Sometimes you need to include tabular data in your documentation.
+Most likely, this data will be stored as a MS Excel spreadsheet, or you may like to use Excel to create and edit it.
+Either way, this task lets you export an Excel spreadsheet and include it directly in your docs.
+It searches for `.xlsx` files and exports each contained worksheet as `.csv` and as `.adoc`.
+Note that formulas contained in your spreadsheet are evaluated and exported statically.
+
+The generated files are written to `src/excel/[filename]/[worksheet].(adoc|cvs)`.
+The `src` folder is used instead of the `build` folder because a better history of worksheet changes is captured.
+
+The files can be included either as AsciiDoc:
+
+----
+\include::excel/Sample.xlsx/Numerical.adoc[]
+----
+
+...or as a CSV file:
+
+----
+[options="header",format="csv"]
+|===
+\include::excel/Sample.xlsx/Numerical.csv[]
+|===
+----
+
+The AsciiDoc version gives you a bit more control because the following are preserved:
+
+- Horizontal and vertical alignment.
+- col-span and row-span.
+- Line breaks.
+- Column width relative to other columns.
+- Background colors.
+
+=== Further Reading and Resources
+
+See https://github.com/uniqueck/asciidoctorj-office-extension[asciidoctorj-office-extension] to learn another way to use Excel spreadsheets in your docs.
+
+=== Source
+
+:param_source_file: scripts/exportExcel.gradle
+:param_source_language: groovy
+:param_source_tags: exportExcel
+include::_viewTaskSource.adoc[]

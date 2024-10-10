@@ -1,0 +1,53 @@
+:filename: 025_development/030_create_new_release.adoc
+== Creating a New Release
+
+include::../_feedback.adoc[]
+
+=== Before You Begin
+
+- We use https://semver.org/[semantic versioning] and we also keep a https://keepachangelog.com/[changelog]. All of this is done on a best-efforts basis.
+- A release consists of five parts, each explained below.
+
+=== GitHub
+
+* run +
+`docker run -it -e BATS_LIB_PATH=/usr/lib/bats -v "${PWD}/dtcw:/code/dtcw"  -v "${PWD}/test:/code/test" maxh/bats:latest test` +
+to test dtcw
+* Update the version in `gradle.properties`.
+* Update the version in `dtcw` and `dtcw.ps1`. `dtcw.bat` will be generated
+* Update the changelog.
+	** Create a section for the version.
+	** Copy to the new section all unreleased features which will be in the release.
+	** Commit and push the new version.
+* https://github.com/docToolchain/docToolchain/releases/new[Draft a new release].
+* Copy the contents of the changelog for this version to the description then submit.
+* Set the version as **v**X.Y.Z.
+* Run `./gradlew createDist` to zip the source in build (the distribution file).
+* Add the zipped file and submit the new release.
+
+=== Docker Hub
+
+==== Standard Image
+
+* Update the https://github.com/docToolchain/docker-image/tree/ng-beta/.github/workflows[GitHub workflows] to reflect the new version.
+* run https://github.com/docToolchain/docker-image/actions/workflows/standard-build.yml[github action] to build and deploy the image
+
+do the same for the other images
+
+=== Blog Post
+
+Create a blog post to announce the new release. The SDKMAN! announcement will reference it.
+
+=== docToolchain-Wrapper (dtcw)
+
+Everything went well? Great! Now let’s update the wrapper.
+
+Navigate to https://github.com/docToolchain/doctoolchain.github.io/actions/workflows/update-dtcw.yml and trigger the action.
+
+
+=== SDKMAN!
+
+A GitHub action https://github.com/docToolchain/docToolchain/actions?query=workflow%3A%22sdkman+deploy%22[sdkman deploy] has been created to deploy to SDKMAN!
+
+* Set the version to the same as for the other releases, but without the prepended v: X.Y.Z.
+* Use as a download link the link to the `docToolchain-dist.zip` from the GitHub release. Tip: the link looks like https://github.com/docToolchain/docToolchain/releases/download/v1.3.1/docToolchain-dist.zip[https://github.com/docToolchain/docToolchain/releases/download/v1.3.1/docToolchain-dist.zip].
